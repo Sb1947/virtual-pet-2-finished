@@ -6,7 +6,7 @@ class Food
         
         this.foodStock = 0;
         this.lastFed;
-        this.image = loadImage("Milk.png")
+        this.image = loadImage("Images/Milk.png")
     }
    
     updateFoodStock(foodStock)
@@ -32,10 +32,26 @@ class Food
     }
     display()
     {
+        background(46,139,87)
+        fill(255,255,254)
+        textSize(15)
+        
+        if(lastFed>=12)
+        {
+        text("Last Feed : "+ lastFed%12 + " PM", 250,30);
+        }
+        else if(lastFed==0)
+        {
+             text("Last Feed : 12 AM",250,30);
+        }
+        else
+        {
+            text("Last Feed : "+ lastFed + " AM", 250,30);
+        }
+
         var x = 80, y = 100;
 
         imageMode(CENTER)
-        image(this.image,500,220,70,70)
 
         if(this.foodStock!=0)
         {
@@ -54,6 +70,25 @@ class Food
             }
         }
     }
+
+    bedroom(){
+        background(RoomImg1,550,500);  
+    }
+      
+    livingroom(){
+        background(RoomImg2,550,500);  
+    } 
+
+    bathroom(){
+        background(RoomImg3,550,500);
+    }
+
+    Outside(){
+        background(OutsideImg,550,500);
+        imageMode(CENTER) 
+    }
+        
+    
 }
 
 
